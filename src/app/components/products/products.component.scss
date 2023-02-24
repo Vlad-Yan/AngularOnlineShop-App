@@ -1,0 +1,27 @@
+.container {
+    margin: 20px;
+    padding-bottom: 84px;
+    gap: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    mat-card-title {
+        margin-left: 16px;
+    }
+}
+
+.button {
+    margin-right: 5px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.image {
+    width: 350px;
+    height: 250px;
+}
