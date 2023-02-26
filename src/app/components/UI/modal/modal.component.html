@@ -1,0 +1,39 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="example-form">
+  
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Price</mat-label>
+    <input matInput formControlName="price">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>image</mat-label>
+    <input matInput formControlName="image">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>brand</mat-label>
+    <input matInput formControlName="brand">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>gender</mat-label>
+    <input matInput formControlName="gender">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>height</mat-label>
+    <input matInput formControlName="height">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>style</mat-label>
+    <input matInput formControlName="style">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>material</mat-label>
+    <input matInput formControlName="material">
+  </mat-form-field>
+
+  <button class="button" mat-flat-button color="primary" type="submit">Добавить товар</button>
+  <button class="button" mat-flat-button color="primary" (click)="onNoClick()">Отмена</button>
+
+</form>

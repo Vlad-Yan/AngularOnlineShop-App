@@ -1,7 +1,9 @@
+import { ModalComponent } from './../UI/modal/modal.component';
 import { ProductsService } from './../../services/products.service';
 import { IProducts } from './../../models/products';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-products',
@@ -12,14 +14,30 @@ export class ProductsComponent implements OnInit {
   products: IProducts[];
   productsSubcription: Subscription;
 
-  constructor(private ProductsService: ProductsService) { }
+  canEdit: boolean = false;
+  canView: boolean = false;
+
+  constructor(private ProductsService: ProductsService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-      this.productsSubcription = this.ProductsService.getProducts().subscribe((data) => {
-        this.products = data;
-        console.log(data)
-
+    this.canEdit = true;
+    this.productsSubcription = this.ProductsService.getProducts().subscribe((data) => {
+      this.products = data;
       })
+  }
+
+  openDialog(): void {
+    let dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '500px';
+    dialogConfig.disableClose = true;
+
+    const dialogRef = this.dialog.open(ModalComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe((data) => this.postData(data))
+  }
+
+  postData(data: IProducts) {
+    this.ProductsService.postProduct(data).subscribe((data) => this.products.push(data));
   }
 
   ngOnDestroy() {
