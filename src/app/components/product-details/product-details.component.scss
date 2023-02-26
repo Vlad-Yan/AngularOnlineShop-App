@@ -1,0 +1,27 @@
+.container {
+  margin: 20px;
+  padding-bottom: 84px;
+
+  
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  mat-card-title {
+      margin-left: 16px;
+  }
+
+  mat-card-content {
+    max-width: 350px;
+  }
+}
+
+.button {
+  margin: 0 auto;
+}
+
+.image {
+  width: 350px;
+  height: 250px;
+}
