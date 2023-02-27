@@ -1,1 +1,29 @@
-<p>basket works!</p>
+<div class="container">
+<mat-card class="indentation-card" *ngFor="let item of basket">
+  <div style="display: flex; align-items: center; justify-content: space-between;">
+    <div style="display: flex; align-items: center; gap: 20px;">
+      <img class="image" mat-card-image src="{{ item.image }}"/>
+      <div>
+        <mat-card-title>{{ item.title }}</mat-card-title>
+        <mat-card-subtitle>
+          <p>Цена: {{ item.price | currency }} / шт</p>
+        </mat-card-subtitle>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center;">
+      <button class="button" mat-flat-button color="primary" (click)="minusItemFromBasket(item)">-</button>
+      <p>Кол-во: {{item.quantity}}</p>
+      <button class="button" mat-flat-button color="primary" (click)="plusItemFromBasket(item)">+</button>
+    </div>
+  </div>
+</mat-card>
+<div *ngIf="sum!=0; else empty" >
+  <h2>Итого: {{ sum | currency }}</h2>
+</div>
+<ng-template #empty style="margin: 200px auto;">
+  <div style="text-align: center;">  
+    <h2>В вашей корзине пусто</h2>
+    <img class="image" mat-card-image src="https://static.insales-cdn.com/assets/1/3047/1813479/1652615264/empty.png" alt="box"/>
+  </div>
+</ng-template>
+</div>

@@ -3,7 +3,8 @@ export interface IProducts {
   title: string,
   price: number,
   image: string,
-  characterizations: IProductsCharacterizations;
+  characterizations: IProductsCharacterizations,
+  quantity: number;
 }
 
 export interface IProductsCharacterizations {

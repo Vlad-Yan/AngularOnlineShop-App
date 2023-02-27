@@ -65,5 +65,35 @@
         "material": "Текстиль, синтетические материал, пеноматериал, резина."
       }
     }
+  ],
+  "basket": [
+    {
+      "id": 3,
+      "title": "Nike Kobe 6",
+      "price": 230,
+      "image": "assets/images/Nike_Kobe_6.jpeg",
+      "characterizations": {
+        "brand": "Nike",
+        "gender": "Мужчины",
+        "height": "Низкие",
+        "style": "Баскетбол",
+        "material": "Текстиль, синтетические материал, пеноматериал, резина."
+      },
+      "quantity": 1
+    },
+    {
+      "id": 5,
+      "title": "Nike Cosmic Unity 2",
+      "price": 240,
+      "image": "assets/images/Nike_Cosmic_Unity_2.jpeg",
+      "characterizations": {
+        "brand": "Nike",
+        "gender": "Мужчины",
+        "height": "Средние",
+        "style": "Баскетбол",
+        "material": "Текстиль, синтетические материал, пеноматериал, резина."
+      },
+      "quantity": 2
+    }
   ]
 }
