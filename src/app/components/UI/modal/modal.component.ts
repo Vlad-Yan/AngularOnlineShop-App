@@ -9,21 +9,26 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 
 export class ModalComponent implements OnInit {
-  myForm: FormGroup = new FormGroup({
-    title: new FormControl(''),
-    price: new FormControl(''),
-    image: new FormControl(''),
-    brand: new FormControl(''),
-    gender: new FormControl(''),
-    height: new FormControl(''),
-    style: new FormControl(''),
-    material: new FormControl('')
-  });
-
   constructor(
     public dialogRef: MatDialogRef<ModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-  ) {}
+  ) {
+    if(this.data) this.isNew = false;
+  }
+
+  myForm: FormGroup = new FormGroup({
+    id: new FormControl(this.data?.id ?? null),
+    title: new FormControl(this.data?.title ?? null),
+    price: new FormControl(this.data?.price ?? null),
+    image: new FormControl(this.data?.image ?? null),
+    brand: new FormControl(this.data?.characterizations.brand ?? null),
+    gender: new FormControl(this.data?.characterizations.gender ?? null),
+    height: new FormControl(this.data?.characterizations.height ?? null),
+    style: new FormControl(this.data?.characterizations.style ?? null),
+    material: new FormControl(this.data?.characterizations.material ?? null)
+  });
+
+  isNew: boolean = true;
 
   onNoClick(): void {
     this.dialogRef.close(null);
@@ -31,6 +36,7 @@ export class ModalComponent implements OnInit {
 
   onSubmit(): void {
     this.data = {
+      id: this.myForm.value.id,
       title: this.myForm.value.title,
       price: this.myForm.value.price,
       image: this.myForm.value.image,

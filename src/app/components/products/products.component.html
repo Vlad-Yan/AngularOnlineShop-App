@@ -18,7 +18,7 @@
       <button class="button" mat-flat-button color="primary" mat-button [matMenuTriggerFor]="menu">Изменить</button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item (click)="deleteItem(product.id)">Удалить</button>
-        <button mat-menu-item>Редактировать</button>
+        <button mat-menu-item (click)="openDialog(product)">Редактировать</button>
       </mat-menu>
     </mat-card-actions>
   </mat-card>

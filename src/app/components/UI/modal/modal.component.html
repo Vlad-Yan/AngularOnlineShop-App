@@ -33,7 +33,9 @@
     <input matInput formControlName="material">
   </mat-form-field>
 
-  <button class="button" mat-flat-button color="primary" type="submit">Добавить товар</button>
+  <button class="button" mat-flat-button color="primary" type="submit">
+    {{ isNew ? 'Добавить товар' : 'Изменить' }}
+  </button>
   <button class="button" mat-flat-button color="primary" (click)="onNoClick()" type="button">Отмена</button>
 
 </form>
