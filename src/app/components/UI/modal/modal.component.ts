@@ -26,7 +26,7 @@ export class ModalComponent implements OnInit {
   ) {}
 
   onNoClick(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(null);
   }
 
   onSubmit(): void {
